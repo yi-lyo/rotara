@@ -5,6 +5,16 @@ from picamera2 import Picamera2, Preview
 #from picamera2.previews import Preview
 import os, sys, termios, tty
 
+
+# --- Camera Settings ---
+EXPOSURE_TIME   = 10000  # microseconds (min: 1, max: 66666)
+ANALOGUE_GAIN   = 1.0    # 1.0 to 16.0
+BRIGHTNESS      = 0.0    # -1.0 to 1.0 (0.0 = default)
+CONTRAST        = 1.0    # 0.0 to 32.0 (1.0 = default)
+SATURATION      = 1.0    # 0.0 to 32.0 (1.0 = default) -- if supported
+SHARPNESS       = 1.0    # 0.0 to 16.0 (1.0 = default)
+NOISE_REDUCTION = 0      # 0=Off, 1=Fast, 4=HighQuality
+
 CAPTURE_KEY="g"
 QUIT_KEY="q"
 def read_key():
@@ -30,11 +40,11 @@ picam2 = Picamera2()
 #picam2.configure(picam2.create_still_configuration())
 
 # show preview
-cfg = picam2.create_preview_configuration() #main={"size" : (1280, 800)})
+cfg = picam2.create_preview_configuration(main={"size" : (1280, 800)})
 picam2.configure(cfg)
 picam2.start_preview(Preview.QT)
 picam2.start()
-time.sleep(2)  # warmup
+time.sleep(5)  # warmup
 
 print(f"Preview on. Press `{CAPTURE_KEY}` to capture, `{QUIT_KEY}` to quit")
 i = 0
