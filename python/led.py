@@ -1,3 +1,9 @@
+"""
+This script tests the GPIO functionality of the Raspberry Pi.
+You can confirm it is working by connecting an LED to `GPIO_PIN`,
+then observing that the LED blinks when this script is run.
+"""
+
 from time import sleep
 import RPi.GPIO as GPIO
 

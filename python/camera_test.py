@@ -1,3 +1,9 @@
+"""
+This script captures a series of images successively using the camera.
+The script waits `interval` seconds between each capture, and
+captures a total of `count` images.
+"""
+
 import time
 from datetime import datetime
 from pathlib import Path

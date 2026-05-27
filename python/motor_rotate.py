@@ -1,3 +1,10 @@
+"""
+This script commands the stepper motor to turn clockwise by one full revolution, stopping
+`NUM_STOPS` times spaced evenly, then commands the stepper motor to turn counterclockwise
+by one full revolution, thereby bringing the position of the shaft to the start.
+This is repeated until the script is stopped.
+"""
+
 from time import sleep
 import RPi.GPIO as GPIO
 

@@ -1,3 +1,7 @@
+"""
+This script turns the motor and captures images from the camera for one revolution.
+"""
+
 from time import sleep, perf_counter
 from datetime import datetime
 from pathlib import Path

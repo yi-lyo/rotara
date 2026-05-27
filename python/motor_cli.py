@@ -1,3 +1,7 @@
+"""
+This script provides a command-line interface to interactively turn the stepper motor.
+"""
+
 from time import sleep
 import RPi.GPIO as GPIO
 
